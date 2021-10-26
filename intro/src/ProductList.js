@@ -4,9 +4,7 @@ import { BsFillBasketFill } from "react-icons/bs";
 
 export default class ProductList extends Component {
 
-    addToCart=(product)=>{
-        alert(product.productName);
-    }
+    
 
 
   render() {
@@ -40,7 +38,7 @@ export default class ProductList extends Component {
                   </Button> */}
                   <BsFillBasketFill 
                   color ="red"
-                  onClick={()=>this.addToCart(product)}
+                  onClick={()=>this.props.addToCart(product)}
                   />
                   
                 </td>
