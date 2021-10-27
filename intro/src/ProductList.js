@@ -1,12 +1,8 @@
 import React, { Component } from "react";
-import { Table, Button } from "reactstrap";
-import { BsFillBasketFill } from "react-icons/bs";
+import { Table,Button } from "reactstrap";
+// import { BsFillBasketFill } from "react-icons/bs";
 
 export default class ProductList extends Component {
-
-    
-
-
   render() {
     return (
       <div>
@@ -33,14 +29,21 @@ export default class ProductList extends Component {
                 <td>{product.quantityPerUnit}</td>
                 <td>{product.unitsInStock}</td>
                 <td>
+                  <Button
+                    onClick={() => this.props.addToCart(product)}
+                    color="info"
+                  >
+                    add
+                  </Button>
+                </td>
+                <td>
                   {/* <Button color="info">
                      
                   </Button> */}
-                  <BsFillBasketFill 
+                  {/* <BsFillBasketFill 
                   color ="red"
                   onClick={()=>this.props.addToCart(product)}
-                  />
-                  
+                  /> */}
                 </td>
               </tr>
             ))}

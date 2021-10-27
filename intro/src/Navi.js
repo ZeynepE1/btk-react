@@ -6,7 +6,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
+  NavLink
 } from "reactstrap";
 import CartSummary from "./CartSummary";
 import { Link } from "react-router-dom";
@@ -17,12 +17,12 @@ export default class Navi extends React.Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false,
+      isOpen: false
     };
   }
   toggle() {
     this.setState({
-      isOpen: !this.state.isOpen,
+      isOpen: !this.state.isOpen
     });
   }
   render() {
@@ -49,7 +49,7 @@ export default class Navi extends React.Component {
                 </NavLink>
               </NavItem>
               <CartSummary
-                // removeFromCart={this.props.removeFromCart}
+                removeFromCart={this.props.removeFromCart}
                 cart={this.props.cart}
               />
             </Nav>
