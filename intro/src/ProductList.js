@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Table,Button } from "reactstrap";
-// import { BsFillBasketFill } from "react-icons/bs";
+import { BsFillBasketFill } from "react-icons/bs";
 
 export default class ProductList extends Component {
   render() {
@@ -28,22 +28,20 @@ export default class ProductList extends Component {
                 <td>{product.unitPrice}</td>
                 <td>{product.quantityPerUnit}</td>
                 <td>{product.unitsInStock}</td>
-                <td>
+                {/* <td>
                   <Button
                     onClick={() => this.props.addToCart(product)}
                     color="info"
                   >
                     add
                   </Button>
-                </td>
+                </td> */}
                 <td>
-                  {/* <Button color="info">
-                     
-                  </Button> */}
-                  {/* <BsFillBasketFill 
+                  
+                  <BsFillBasketFill 
                   color ="red"
                   onClick={()=>this.props.addToCart(product)}
-                  /> */}
+                  />
                 </td>
               </tr>
             ))}
