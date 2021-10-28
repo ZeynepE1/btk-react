@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { increaseCounter } from "../redux/actions/counterActions";
+import { increaseByTwoCounter } from "../redux/actions/counterActions";
 
-class IncreaseCounter extends Component {
+class IncreaseByTwoCounter extends Component {
   render() {
     return (
       <div>
         <button 
           onClick={(e) => {
-            this.props.dispatch(increaseCounter())
+            this.props.dispatch(increaseByTwoCounter())
           }} 
         >
-          1 Arttır
+          2 Arttır
         </button>
       </div>
     );
@@ -20,7 +20,7 @@ class IncreaseCounter extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(increaseCounter, dispatch) };
+  return { actions: bindActionCreators(increaseByTwoCounter, dispatch) };
 }
 
-export default connect(mapDispatchToProps)(IncreaseCounter);
+export default connect(mapDispatchToProps)(IncreaseByTwoCounter);
