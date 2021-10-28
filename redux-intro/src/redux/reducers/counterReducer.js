@@ -17,6 +17,6 @@ const counterReducer = (state = 0, action) => {
   }
 };
 
-//javascript immutibility araştır...
+//javascript immutability araştır...
 
-export default counterReducer;
+export default  counterReducer;
