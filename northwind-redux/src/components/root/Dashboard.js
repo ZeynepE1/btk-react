@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import {row,Col} from "reactstrap";
+import {Row,Col} from "reactstrap";
 import CategoryList from "../categories/CategoryList";
-import ProductList from "../categories/ProductList";
+import ProductList from "../products/ProductList";
 
 export default class Dashboard extends Component {
     render() {

@@ -6,9 +6,13 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText,
 } from "reactstrap";
-import CartSummary from "./CartSummary";
 import { Link } from "react-router-dom";
 
 export default class Navi extends React.Component {
@@ -17,42 +21,43 @@ export default class Navi extends React.Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
+      isOpen: false,
     };
   }
   toggle() {
     this.setState({
-      isOpen: !this.state.isOpen
+      isOpen: !this.state.isOpen,
     });
   }
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">Northwind App</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+        <Navbar color="light" expand="md" light>
+          <NavbarBrand href="/">reactstrap</NavbarBrand>
+          <NavbarToggler onClick={function noRefCheck() {}} />
+          <Collapse navbar>
+            <Nav className="ml-auto" navbar >
               <NavItem>
-                <NavLink>
-                  <Link to="form1">Form Demo 1</Link>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink>
-                  <Link to="form2">Form Demo 2</Link>
-                </NavLink>
+                <NavLink href="/components/">Components</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="https://github.com/reactstrap/reactstrap">
                   GitHub
                 </NavLink>
               </NavItem>
-              <CartSummary
-                removeFromCart={this.props.removeFromCart}
-                cart={this.props.cart}
-              />
+              <UncontrolledDropdown inNavbar nav>
+                <DropdownToggle caret nav>
+                  Options
+                </DropdownToggle>
+                <DropdownMenu right>
+                  <DropdownItem>Option 1</DropdownItem>
+                  <DropdownItem>Option 2</DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem>Reset</DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
             </Nav>
+            <NavbarText>Simple Text</NavbarText>
           </Collapse>
         </Navbar>
       </div>
