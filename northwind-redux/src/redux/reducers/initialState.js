@@ -1,3 +1,5 @@
 export default {
-    currentCategory:{categoryName:"Bavereges"}
+    currentCategory:{},
+    categories:[],
+    products:[]
 }
