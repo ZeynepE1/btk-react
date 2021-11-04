@@ -1,17 +1,17 @@
 import * as actionTypes from "./actionTypes";
 
-
-
 export function getProductSuccess(products) {
-    return { type: actionTypes.GET_PRODUCTS_SUCCESS, payload: products };
-  }
-  
-  export function getProducts() {
-    return function (dispatch) {
+  return { type: actionTypes.GET_PRODUCTS_SUCCESS, payload: products };
+}
 
-      let url = "http://localhost:3000/products";
-      return fetch(url)
-        .then((response) => response.json())
-        .then((result) => dispatch(getProductSuccess(result)));
-    };
-  }
+export function getProducts(categoryId) {
+  return function (dispatch) {
+    let url = "http://localhost:3000/products";
+    if (categoryId) {
+      url = url + "?categoryId=" + categoryId;
+    }
+    return fetch(url)
+      .then((response) => response.json())
+      .then((result) => dispatch(getProductSuccess(result)));
+  };
+}

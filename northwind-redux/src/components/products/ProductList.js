@@ -55,7 +55,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     actions: {
-      getProducts: bindActionCreators(productActions.getProducts, dispatch),
+      getProducts: bindActionCreators(productActions.getProducts, dispatch)
     },
   };
 }
