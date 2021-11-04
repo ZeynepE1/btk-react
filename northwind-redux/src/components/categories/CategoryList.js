@@ -12,7 +12,7 @@ class CategoryList extends Component {
   }
   selectCategory = (category) => {
     this.props.actions.changeCategory(category);
-    this.props.actions.getProducts(category.id)
+    this.props.actions.getProducts(category.id);
   };
 
   render() {
@@ -22,7 +22,7 @@ class CategoryList extends Component {
           <Badge color="warning">Categories</Badge>{" "}
         </h3>
         <ListGroup>
-          {this.props.categories.map(category => (
+          {this.props.categories.map((category) => (
             <ListGroupItem
               active={category.id === this.props.currentCategory.id}
               onClick={() => this.selectCategory(category)}
@@ -55,7 +55,7 @@ function mapDispatchToProps(dispatch) {
         categoryActions.changeCategory,
         dispatch
       ),
-      getProducts: bindActionCreators(productActions.getProducts, dispatch)
+      getProducts: bindActionCreators(productActions.getProducts, dispatch),
     },
   };
 }
